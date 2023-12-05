@@ -236,7 +236,7 @@ function App() {
             onLoadedData={videoLoadHandle}
             controls={false}
             loop={true}
-            src="https://images-v3.bounce.finance/landingpage/background-v1.mp4"
+            src="https://images-v3.bounce.finance/landingpage/background-v2.mp4"
             autoPlay
             muted
           ></video>
