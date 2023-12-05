@@ -1,5 +1,4 @@
-import { Box, Typography, styled } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Box, Typography, styled, Link } from "@mui/material";
 import { AnimateStep } from "../App";
 import P1 from "../assets/imgs/p1.png";
 import P2 from "../assets/imgs/p2.png";
@@ -13,7 +12,7 @@ import P32 from "../assets/imgs/p3_2.svg";
 import Logo2 from "../assets/imgs/logo2.svg";
 import useBreakpoint from "../hooks/useBreakpoint";
 
-const CardItem = styled(Grid)(({ theme }) => ({
+const CardItem = styled(Link)(({ theme }) => ({
   "&.card": {
     flex: 1,
     position: "relative",
@@ -56,10 +55,8 @@ const CardItem = styled(Grid)(({ theme }) => ({
   "&.card:hover": {
     transform: "rotateY(180deg)",
   },
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     width: "100%",
-    overflowY: "auto",
-    marginBottom: "32px",
     ".front": {
       display: "none",
     },
@@ -74,11 +71,11 @@ const CardItem = styled(Grid)(({ theme }) => ({
 }));
 const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
   const isDownMd = useBreakpoint("md");
-
   const contents = [
     {
       title: "Bounce Bit",
       text: "Unlock the Power of Bitcoin Ecosystem",
+      link: "https://www.bouncebit.io/",
       bg: P1,
       children: (
         <>
@@ -103,6 +100,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
     {
       title: "Bounce Auction",
       text: "Auction as a Service",
+      link: "https://auction.bounce.finance/",
       bg: P2,
       children: (
         <Box
@@ -192,7 +190,17 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
       >
         {contents.map((item, index) => {
           return (
-            <CardItem key={index} className="card">
+            <CardItem
+              underline="none"
+              key={index}
+              className="card"
+              href={item.link}
+              target="_blank"
+              sx={{
+                display: "block",
+                marginBottom: "32px",
+              }}
+            >
               <Box className={"front"}>
                 <Box
                   sx={{
