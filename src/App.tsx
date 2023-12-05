@@ -38,6 +38,9 @@ function App() {
     }
     return () => {};
   }, [isLoading]);
+  const restartAnimation = () => {
+    window.location.reload()
+  };
   const videoLoadHandle = () => {
     setIsLoading(false);
   };
@@ -192,7 +195,7 @@ function App() {
             top: 0,
             left: 0,
             width: "100%",
-            zIndex: 2,
+            zIndex: 3,
           }}
         >
           <Box
@@ -215,6 +218,7 @@ function App() {
                 cursor: "pointer",
               }}
               alt="logo"
+              onClick={restartAnimation}
             />
           </Box>
         </Box>
@@ -247,7 +251,18 @@ function App() {
               left: 0,
               width: "100%",
               height: "100%",
+              background: "rgba(0, 0, 0, 0.6)",
               zIndex: 1,
+            }}
+          ></Box>
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 2,
             }}
           >
             <Typography

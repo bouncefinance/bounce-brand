@@ -46,8 +46,9 @@ const CardItem = styled(Link)(({ theme }) => ({
     overflow: "hidden",
   },
   ".back": {
-    background: "#181818",
+    background: "#000",
     padding: "48px 0",
+    border: "1px solid #181818",
     transform: "rotateY(180deg)",
     flexFlow: "column nowrap",
     justifyContent: "space-between",
@@ -56,8 +57,12 @@ const CardItem = styled(Link)(({ theme }) => ({
     transform: "rotateY(180deg)",
   },
   [theme.breakpoints.down("md")]: {
-    width: "100%",
-    margin: "0 auto 32px",
+    "&.card": {
+      width: "260px",
+      height: "330px",
+      minHeight: "330px",
+      margin: "0 auto 0",
+    },
     "&.card:focus": {
       transform: "rotateY(0)",
     },
@@ -198,7 +203,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                   sx={{
                     width: "100%",
                     height: "100%",
-                    background: `url(${item.bg}) no-repeat center center / cover`,
+                    background: `url(${item.bg}) no-repeat center center / contain`,
                     display: "flex",
                     flexFlow: "column nowrap",
                     justifyContent: "center",
@@ -252,7 +257,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                       fontSize: "15px",
                       textAlign: "left",
                       width: "100%",
-                      color: "#fff",
+                      color: "rgba(255, 255,255, 0.7)",
                       padding: "0 42px",
                     }}
                   >
@@ -365,7 +370,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                     fontSize: "18px",
                     textAlign: "left",
                     width: "100%",
-                    color: "#fff",
+                    color: "rgba(255, 255,255, 0.7)",
                     padding: "0 42px",
                   }}
                 >
