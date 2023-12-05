@@ -12,7 +12,10 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     margin: '0 auto',
     display: 'flex',
     [theme.breakpoints.down('md')]: {
-      transform: 'translate3d(-50%, -50%, 0) scale(50%)'
+      transform: 'translate3d(-50%, -50%, 0)',
+      top: '45%',
+      width: '120px',
+      height: '120px'
     }
   },
   '& .circle-wrap': {
@@ -20,7 +23,11 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     height: '482px',
     margin: '0 auto',
     overflow: 'hidden',
-    position: 'relative'
+    position: 'relative',
+    [theme.breakpoints.down('md')]: {
+      width: '60px',
+      height: '120px'
+    }
   },
   '& .warp-all': {
     width: '482px',
@@ -29,7 +36,11 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     borderRadius: '50%',
     position: 'absolute',
     top: 0,
-    transitionTimingFunction: 'linear'
+    transitionTimingFunction: 'linear',
+    [theme.breakpoints.down('md')]: {
+      width: '120px',
+      height: '120px'
+    }
   },
   '& .left': {
     left: 0,
@@ -63,7 +74,10 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     animationDelay: '1s',
     animationDuration: '2s',
     animationIterationCount: 1,
-    animationFillMode: 'forwards'
+    animationFillMode: 'forwards',
+    [theme.breakpoints.down('md')]: {
+      width: '50px'
+    }
   },
   '&.done': {
     top: '74px',
@@ -85,6 +99,19 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     '.logo': {
       width: '34px',
       transition: '1.6s'
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '33px',
+      height: '33px',
+      ' circle-wrap': {
+        width: '17px',
+        height: '33px'
+      },
+      '.warp-all': { width: '33px', height: '33px' },
+      '.logo': {
+        width: '14px'
+      },
+      top: '100px'
     }
   },
   '@keyframes right': {

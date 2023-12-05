@@ -44,38 +44,46 @@ function App() {
     if (animateStep === AnimateStep.default) {
       return {
         color: '#fff',
-        fontSize: isDownMd ? '100px' : '200px',
+        fontSize: isDownMd ? '80px' : '200px',
         position: 'absolute',
-        top: '50%',
+        top: isDownMd ? '50%' : '50%',
         right: '50%',
-        transform: 'translate3D(50%, -50%, 0)'
+        transform: isDownMd
+          ? `translate3D(50%, -50%, 0)`
+          : `translate3D(50%, -50%, 0)`
       }
     } else if (animateStep === AnimateStep.textEnter) {
       return {
         color: '#fff',
-        fontSize: isDownMd ? '100px' : '200px',
+        fontSize: isDownMd ? '80px' : '200px',
         position: 'absolute',
-        top: '50%',
+        top: isDownMd ? '30%' : '50%',
         right: '50%',
-        transform: 'translate3D(0, -50%, 0)'
+        transform: isDownMd
+          ? `translate3D( 50%, 0, 0)`
+          : 'translate3D(0, -50%, 0)'
       }
     } else if (animateStep === AnimateStep.textScale) {
       return {
         color: '#fff',
         fontSize: isDownMd ? '50px' : '100px',
         position: 'absolute',
-        top: '50%',
-        right: '50%',
-        transform: `translate3D(-${isDownMd ? 141 : 241}px, -50%, 0)`
+        top: isDownMd ? '30%' : '50%',
+        right: isDownMd ? '50%' : '50%',
+        transform: isDownMd
+          ? `translate3D( 50%, 0, 0)`
+          : `translate3D(${241}px, -50%, 0)`
       }
     } else if (animateStep === AnimateStep.circleEnter) {
       return {
         color: '#fff',
         fontSize: isDownMd ? '50px' : '100px',
         position: 'absolute',
-        top: '50%',
+        top: isDownMd ? '30%' : '50%',
         right: '50%',
-        transform: `translate3D(-${isDownMd ? 34 : 134}px,-50%, 0)`
+        transform: isDownMd
+          ? `translate3D( 50%, 0, 0)`
+          : `translate3D(-${134}px,-50%, 0)`
       }
     } else if (animateStep === AnimateStep.allLeave) {
       return {
@@ -84,14 +92,14 @@ function App() {
         fontSize: isDownMd ? '20px' : '40px',
         position: 'absolute',
         right: '50%',
-        transform: `translate3D(-${isDownMd ? 48 : 68}px, 0, 0)`
+        transform: `translate3D(-${isDownMd ? 30 : 68}px, 0, 0)`
       }
     }
     return {
       color: '#fff',
-      fontSize: isDownMd ? '100px' : '200px',
+      fontSize: isDownMd ? '80px' : '200px',
       position: 'absolute',
-      top: '50%',
+      top: isDownMd ? '20%' : '50%',
       right: '50%',
       transform: 'translate3D(50%, -50%, 0)'
     }
@@ -101,20 +109,24 @@ function App() {
     if (animateStep === AnimateStep.default) {
       return {
         color: '#fff',
-        fontSize: isDownMd ? '100px' : '200px',
+        fontSize: isDownMd ? '80px' : '200px',
         position: 'absolute',
-        top: '50%',
+        top: isDownMd ? '70%' : '50%',
         left: '50%',
-        transform: 'translate3D(50vw, -50%, 0)'
+        transform: isDownMd
+          ? 'translate3D(-50%, 50vh, 0)'
+          : 'translate3D(50vw, -50%, 0)'
       }
     } else if (animateStep === AnimateStep.textEnter) {
       return {
         color: '#fff',
-        fontSize: isDownMd ? '100px' : '200px',
+        fontSize: isDownMd ? '80px' : '200px',
         position: 'absolute',
-        top: '50%',
+        top: isDownMd ? '50%' : '50%',
         left: '50%',
-        transform: 'translate3D(50px, -50%, 0)'
+        transform: isDownMd
+          ? 'translate3D(-50%, 0, 0)'
+          : 'translate3D(50px, -50%, 0)'
       }
     } else if (animateStep === AnimateStep.textScale) {
       return {
@@ -123,7 +135,9 @@ function App() {
         position: 'absolute',
         top: '50%',
         left: '50%',
-        transform: `translate3D(${isDownMd ? 141 : 241}px, -50%, 0)`
+        transform: isDownMd
+          ? 'translate3D(-50%, 0, 0)'
+          : `translate3D(${241}px, -50%, 0)`
       }
     } else if (animateStep === AnimateStep.circleEnter) {
       return {
@@ -132,7 +146,9 @@ function App() {
         position: 'absolute',
         top: '50%',
         left: '50%',
-        transform: `translate3D(${isDownMd ? 34 : 134}px,-50%, 0)`
+        transform: isDownMd
+          ? 'translate3D(-50%, 0, 0)'
+          : `translate3D(${134}px,-50%, 0)`
       }
     } else if (animateStep === AnimateStep.allLeave) {
       return {
@@ -141,16 +157,18 @@ function App() {
         fontSize: isDownMd ? '20px' : '40px',
         position: 'absolute',
         left: '50%',
-        transform: `translate3D(${isDownMd ? 48 : 68}px, 0, 0)`
+        transform: `translate3D(${isDownMd ? 30 : 68}px, 0, 0)`
       }
     }
     return {
       color: '#fff',
-      fontSize: isDownMd ? '100px' : '200px',
+      fontSize: isDownMd ? '80px' : '200px',
       position: 'absolute',
-      top: '50%',
+      top: isDownMd ? '70%' : '50%',
       left: '50%',
-      transform: 'translate3D(50vw, -50%, 0)'
+      transform: isDownMd
+        ? 'translate3D(-50%, -50vh, 0)'
+        : 'translate3D(50vw, -50%, 0)'
     }
   }, [animateStep, isDownMd])
 
