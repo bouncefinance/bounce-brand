@@ -225,7 +225,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
               <Box
                 className={"back"}
                 onClick={() => {
-                  window.open(item.link, "_blank");
+                  item.link && window.open(item.link, "_blank");
                 }}
               >
                 <Box
