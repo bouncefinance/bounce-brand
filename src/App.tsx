@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import logo from "./assets/imgs/logo.svg";
 import { Box, Typography } from "@mui/material";
 import CircleLogo from "./components/circleLogo";
+import Cards from "./components/cards";
 export enum AnimateStep {
   "default" = 0,
   "textEnter" = 1,
@@ -208,7 +209,7 @@ function App() {
           onLoadedData={videoLoadHandle}
           controls={false}
           loop={true}
-          src="https://images-v3.bounce.finance/landingpage/background-v0.mp4"
+          src="https://images-v3.bounce.finance/landingpage/background-v1.mp4"
           autoPlay
           muted
         ></video>
@@ -216,10 +217,14 @@ function App() {
           sx={{
             position: "absolute",
             top: 0,
-            left: 0,
+            left: "50%",
             width: "100%",
+            maxWidth: "1440px",
+            margin: "0 auto",
             height: "100%",
             zIndex: 1,
+            transform: "translate3D(-50%, 0, 0)",
+            overflow: "hidden",
           }}
         >
           <Typography
@@ -240,6 +245,7 @@ function App() {
             Brand
           </Typography>
           <CircleLogo animateStep={animateStep} />
+          <Cards animateStep={animateStep} />
         </Box>
       </Box>
     </Box>
