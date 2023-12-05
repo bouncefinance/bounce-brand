@@ -58,14 +58,7 @@ const CardItem = styled(Link)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     width: "100%",
     margin: "0 auto 32px",
-    ".front": {
-      display: "none",
-    },
-    ".back": {
-      position: "relative",
-      transform: "rotateY(0)",
-    },
-    "&.card:hover": {
+    "&.card:focus": {
       transform: "rotateY(0)",
     },
   },
@@ -195,8 +188,6 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
               underline="none"
               key={index}
               className="card"
-              href={item.link}
-              target="_blank"
               sx={{
                 display: "block",
                 marginBottom: "32px",
@@ -231,7 +222,12 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                   </Typography>
                 </Box>
               </Box>
-              <Box className={"back"}>
+              <Box
+                className={"back"}
+                onClick={() => {
+                  window.open(item.link, "_blank");
+                }}
+              >
                 <Box
                   sx={{
                     width: "100%",
