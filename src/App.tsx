@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material'
 import CircleLogo from './components/circleLogo'
 import Loader from './components/loader'
 import useBreakpoint from './hooks/useBreakpoint'
+
 export enum AnimateStep {
   'default' = 0,
   'textEnter' = 1,
