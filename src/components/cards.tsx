@@ -11,6 +11,7 @@ import P22 from "../assets/imgs/p2_2.png";
 import P31 from "../assets/imgs/p3_1.png";
 import P32 from "../assets/imgs/p3_2.svg";
 import Logo2 from "../assets/imgs/logo2.svg";
+import useBreakpoint from "../hooks/useBreakpoint";
 
 const CardItem = styled(Grid)(() => ({
   "&.card": {
@@ -18,6 +19,7 @@ const CardItem = styled(Grid)(() => ({
     position: "relative",
     cursor: "pointer",
     width: "calc(33% -24px)",
+    maxWidth: "437px",
     height: "510px",
     minHeight: "510px",
     perspective: "1000px",
@@ -56,6 +58,8 @@ const CardItem = styled(Grid)(() => ({
   },
 }));
 const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
+  const isDownMd = useBreakpoint("md");
+
   const contents = [
     {
       title: "Bounce Bit",
@@ -125,7 +129,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
             position: "relative",
             width: "100%",
             display: "flex",
-            justifyContent:'center',
+            justifyContent: "center",
             paddingBottom: "20px",
           }}
         >
@@ -156,10 +160,6 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
     <Box
       sx={{
         position: "absolute",
-        display: "flex",
-        flexFlow: "row nowrap",
-        justifyContent: "center",
-        alignItems: "flex-end",
         bottom: "60px",
         left: "50%",
         transform:
@@ -167,6 +167,10 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
             ? "translate3D(-50%, 100vh, 0)"
             : "translate3D(-50%, 0, 0)",
         transition: "all 1.6s",
+        display: "flex",
+        flexFlow: isDownMd ? "column nowrap" : "row nowrap",
+        justifyContent: "center",
+        alignItems: isDownMd ? "flex-start" : "flex-end",
         width: "100%",
         overflow: "hidden",
         padding: "0 40px",
