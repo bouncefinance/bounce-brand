@@ -13,7 +13,7 @@ import P32 from "../assets/imgs/p3_2.svg";
 import Logo2 from "../assets/imgs/logo2.svg";
 import useBreakpoint from "../hooks/useBreakpoint";
 
-const CardItem = styled(Grid)(() => ({
+const CardItem = styled(Grid)(({ theme }) => ({
   "&.card": {
     flex: 1,
     position: "relative",
@@ -55,6 +55,21 @@ const CardItem = styled(Grid)(() => ({
   },
   "&.card:hover": {
     transform: "rotateY(180deg)",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    overflowY: "auto",
+    marginBottom: "32px",
+    ".front": {
+      display: "none",
+    },
+    ".back": {
+      position: "relative",
+      transform: "rotateY(0)",
+    },
+    "&.card:hover": {
+      transform: "rotateY(0)",
+    },
   },
 }));
 const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
@@ -156,6 +171,107 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
       ),
     },
   ];
+  if (isDownMd) {
+    return (
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "0",
+          left: "0",
+          display: "block",
+          width: "100%",
+          overflowY: "auto",
+          padding: "0 20px",
+          height: "calc(100vh - 150px - 20px)",
+          transform:
+            animateStep < AnimateStep.allLeave
+              ? "translate3D(0, 100vh, 0)"
+              : "translate3D(0, 0, 0)",
+          transition: "all 1.6s",
+        }}
+      >
+        {contents.map((item, index) => {
+          return (
+            <CardItem key={index} className="card">
+              <Box className={"front"}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    background: `url(${item.bg}) no-repeat center center / cover`,
+                    display: "flex",
+                    flexFlow: "column nowrap",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img src={Logo2} alt="" />
+                  <Typography
+                    sx={{
+                      position: "absolute",
+                      bottom: "44px",
+                      left: "0",
+                      width: "100%",
+                      textAlign: "center",
+                      fontSize: "18px",
+                      color: "#fff",
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                </Box>
+              </Box>
+              <Box className={"back"}>
+                <Box
+                  sx={{
+                    width: "100%",
+                  }}
+                >
+                  <Typography
+                    component={"p"}
+                    sx={{
+                      color: "#fff",
+                      width: "100%",
+                      fontSize: "40px",
+                      textAlign: "left",
+                      marginBottom: "14px",
+                      padding: "0 42px",
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    component={"p"}
+                    sx={{
+                      fontSize: "18px",
+                      textAlign: "left",
+                      width: "100%",
+                      color: "#fff",
+                      padding: "0 42px",
+                    }}
+                  >
+                    {item.text}
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    flexFlow: "column nowrap",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  {item.children}
+                </Box>
+              </Box>
+            </CardItem>
+          );
+        })}
+      </Box>
+    );
+  }
   return (
     <Box
       sx={{
