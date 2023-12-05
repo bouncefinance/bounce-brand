@@ -134,7 +134,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
     },
     {
       title: "Bounce Box",
-      text: "You Defi Dreams All in One Box",
+      text: "You Defi Dreams All in One Box （coming soon）",
       bg: P3,
       children: (
         <Box
@@ -241,7 +241,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                     sx={{
                       color: "#fff",
                       width: "100%",
-                      fontSize: "40px",
+                      fontSize: "24px",
                       textAlign: "left",
                       marginBottom: "14px",
                       padding: "0 42px",
@@ -252,7 +252,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                   <Typography
                     component={"p"}
                     sx={{
-                      fontSize: "18px",
+                      fontSize: "15px",
                       textAlign: "left",
                       width: "100%",
                       color: "#fff",
@@ -304,7 +304,16 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
     >
       {contents.map((item, index) => {
         return (
-          <CardItem key={index} className="card">
+          <CardItem
+            key={index}
+            className="card"
+            underline="none"
+            href={item.link}
+            target="_blank"
+            sx={{
+              display: "block",
+            }}
+          >
             <Box className={"front"}>
               <Box
                 sx={{
