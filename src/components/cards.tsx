@@ -57,6 +57,7 @@ const CardItem = styled(Link)(({ theme }) => ({
   },
   [theme.breakpoints.down("md")]: {
     width: "100%",
+    margin: "0 auto 32px",
     ".front": {
       display: "none",
     },
