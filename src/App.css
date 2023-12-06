@@ -28,18 +28,3 @@ a {
     font-family: 'SF Pro Display';
     src: url('./assets/font/SFPRODISPLAYREGULAR.OTF');
 }
-
-.loader{
-  animation: flash 1.5s infinite reverse;
-  animation-timing-function: cubic-bezier(0.05, 1.25);
-  border:1px solid white
- }
-
-@keyframes flash {
-  0% {
-opacity:0
-  }
-  100%{
-    opacity:1
-  }
-}

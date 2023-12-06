@@ -6,14 +6,13 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: 'translate3d(-50%, -50%, 0)',
+    transform: 'translate3d(-50%, -70%, 0)',
     width: '482px',
     height: '482px',
     margin: '0 auto',
     display: 'flex',
     [theme.breakpoints.down('md')]: {
-      transform: 'translate3d(-50%, -50%, 0)',
-      top: '45%',
+      transform: 'translate3d(-50%, -70%, 0)',
       width: '120px',
       height: '120px'
     }
@@ -74,7 +73,7 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     top: '50%',
     left: '50%',
     opacity: 0,
-    transform: 'translate3d(-50%, 50%, 0)',
+    transform: 'translate3d(-50%, -70%, 0)',
     width: '78px',
     animationName: 'imgEnter',
     animationDelay: '1s',
@@ -89,11 +88,11 @@ const CircleBlock = styled(Box)(({ theme }) => ({
   '&.done': {
     top: '74px',
     left: '50%',
-    transform: 'translate3d(-50%, 0, 0)',
+    transform: 'translate3d(-50%, -1%, 0)',
     width: '82px',
     height: '82px',
     transition: '1.6s',
-    ' circle-wrap': {
+    '.circle-wrap': {
       width: '41px',
       height: '82px',
       transition: '1.6s'
@@ -140,7 +139,7 @@ const CircleBlock = styled(Box)(({ theme }) => ({
   '@keyframes imgEnter': {
     '0%': {
       opacity: 0,
-      transform: 'translate3d(-50%, 50%, 0)'
+      transform: 'translate3d(-50%, -50%, 0)'
     },
     '100%': {
       opacity: 1,
