@@ -178,8 +178,8 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
           display: "block",
           width: "100%",
           overflowY: "auto",
-          padding: "0 20px",
-          height: "calc(100vh - 150px - 20px)",
+          padding: "170px 20px 0",
+          height: "100vh",
           transform:
             animateStep < AnimateStep.allLeave
               ? "translate3D(0, 100vh, 0)"
