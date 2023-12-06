@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import BounceAnime from './bounceAnime'
 
 export default function Loader() {
@@ -23,14 +23,14 @@ export function BallBase(props: any) {
   return (
     <Box margin="auto auto">
       <BounceAnime />
-      <Typography
+      {/* <Typography
         sx={{ color: '#ffffff', fontWeight: 700 }}
         mt={1}
         mb={3}
         textAlign={'center'}
       >
         Loading
-      </Typography>
+      </Typography> */}
     </Box>
   )
 }
