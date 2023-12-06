@@ -49,6 +49,9 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     transform: 'rotate(-135deg)',
     animationName: 'left',
     animationDuration: '2s',
+    [theme.breakpoints.down('md')]: {
+      animationDuration: '1s'
+    },
     animationIterationCount: 1,
     animationFillMode: 'forwards'
   },
@@ -61,7 +64,10 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     animationName: 'right',
     animationDuration: '2s',
     animationIterationCount: 1,
-    animationFillMode: 'forwards'
+    animationFillMode: 'forwards',
+    [theme.breakpoints.down('md')]: {
+      animationDuration: '1s'
+    }
   },
   '& .logo': {
     position: 'absolute',
@@ -76,7 +82,8 @@ const CircleBlock = styled(Box)(({ theme }) => ({
     animationIterationCount: 1,
     animationFillMode: 'forwards',
     [theme.breakpoints.down('md')]: {
-      width: '50px'
+      width: '50px',
+      animationDuration: '1s'
     }
   },
   '&.done': {
