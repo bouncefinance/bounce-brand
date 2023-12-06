@@ -178,7 +178,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
           display: "block",
           width: "100%",
           overflowY: "auto",
-          padding: "170px 20px 0",
+          padding: "170px 20px 180px",
           height: "100vh",
           transform:
             animateStep < AnimateStep.allLeave

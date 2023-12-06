@@ -18,12 +18,12 @@ const BounceAnime: React.FC = () => {
       sx={{
         display: 'grid',
         placeContent: 'center',
-        width: 220,
-        height: 220,
+        width: 110,
+        height: 110,
         margin: '0 auto'
       }}
     >
-      <Lottie classwidth={200} height={200} options={defaultOptions} />
+      <Lottie classwidth={100} height={100} options={defaultOptions} />
     </Box>
   )
 }
