@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import Lottie from 'react-lottie'
-import bounce_loading from './bounce-loading.json'
+import bounce_loading from './bounce-white-loading.json'
 
 const defaultOptions = {
   loop: true,
