@@ -133,7 +133,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
     },
     {
       title: "Bounce Box",
-      text: "You Defi Dreams All in One Box （coming soon）",
+      text: "You Defi Dreams All in One Box (coming soon)",
       bg: P3,
       children: (
         <Box
