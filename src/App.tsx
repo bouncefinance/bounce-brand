@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from 'react'
 import logo from './assets/imgs/logo.svg'
+import ImgBg from './assets/imgs/mobile_bg.jpg'
 import { Box, Typography } from '@mui/material'
 import CircleLogo from './components/circleLogo'
 import Loader from './components/loader'
 import useBreakpoint from './hooks/useBreakpoint'
 import Cards from './components/cards'
+import { isMobile } from './userAgent'
 
 export enum AnimateStep {
   'default' = 0,
@@ -236,7 +238,13 @@ function App() {
           }}
         >
           {/* video bg */}
-          <video
+          {isMobile && <img style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }} alt='' src={ImgBg} onLoad={videoLoadHandle} />}
+          {!isMobile && <video
             style={{
               position: 'absolute',
               width: '100%',
@@ -249,7 +257,7 @@ function App() {
             src="https://images-v3.bounce.finance/landingpage/background-v2.mp4"
             autoPlay
             muted
-          ></video>
+          ></video>}
           <Box
             sx={{
               position: 'absolute',
