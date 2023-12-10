@@ -46,12 +46,14 @@ const CardItem = styled(Link)(({ theme }) => ({
     overflow: "hidden",
   },
   ".back": {
+    textDecoration: 'none',
     background: "#000",
     padding: "48px 0",
     border: "1px solid #181818",
     transform: "rotateY(180deg)",
     flexFlow: "column nowrap",
     justifyContent: "space-between",
+    zIndex: 999,
   },
   "&.card:hover": {
     transform: "rotateY(180deg)",
@@ -227,11 +229,13 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                   </Typography>
                 </Box>
               </Box>
-              <Box
+              <Link
                 className={"back"}
-                onClick={() => {
-                  item.link && window.open(item.link, "_blank");
-                }}
+                href={item.link}
+                target="_blank"
+                // onClick={() => {
+                //   item.link && window.open(item.link, "_blank");
+                // }}
               >
                 <Box
                   sx={{
@@ -275,7 +279,7 @@ const Cards = ({ animateStep }: { animateStep: AnimateStep }) => {
                 >
                   {item.children}
                 </Box>
-              </Box>
+              </Link>
             </CardItem>
           );
         })}
